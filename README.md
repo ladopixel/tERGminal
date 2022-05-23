@@ -24,7 +24,7 @@ pip install ergpy
   <li>✅ 2 Send ERG to a wallet.</li>
   <li>✅ 3 Send ERG to a random wallet.</li>
   <li>✅ 4 Send NFT to wallet.</li>
-  <li>⌛ 5 Send NFT to a random wallet.</li>
+  <li>✅ 5 Send NFT to a random wallet.</li>
   <li>⌛ 6 Send NFT random to a wallet.</li>
   <li>⌛ 7 Create token.</li>
   <li>⌛ 8 Create NFT.</li>
