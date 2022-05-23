@@ -8,6 +8,51 @@ import requests
 ergo = appkit.ErgoAppKit(nodeURL = 'http://159.65.11.55:9053/')
 walletMnemonic = ''
 
+# Varias funciones para datos
+def toUtf8String(hex):
+    valorUTF8 = '' 
+    aux = ''
+    contador = 0
+    for i in hex:
+        contador = contador + 1
+        if contador < 3:
+            aux = aux + i
+        if contador == 2:
+            valorUTF8 = valorUTF8 + str(chr(int(aux, 16)))
+            contador = 0
+            aux = ''
+    return valorUTF8
+
+def resolveIpfs(url):
+    ipfsPrefix = 'ipfs://'
+    if url[0:7:1] != ipfsPrefix:
+        return url
+    else:
+        print(url.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/'))
+        return url.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/')
+
+def resolveIpfsAudio(urls):
+    ipfsPrefix = 'ipfs://'
+    posicion = urls.find('B')
+    if urls[0:7:1] != ipfsPrefix:
+        return urls
+    else:
+        url1 = urls[0:posicion:1]
+        url1 = url1.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/')
+        print(url1.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/'))
+    return str(url1)
+
+def resolveIpfsAudio2(urls):
+    ipfsPrefix = 'ipfs://'
+    posicion = urls.find('B')
+    if urls[0:7:1] != ipfsPrefix:
+        return urls
+    else:
+        url2 = urls[posicion+1:]
+        url2 = url2.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/')
+        print(url2.replace(ipfsPrefix, 'https://cloudflare-ipfs.com/ipfs/'))
+    return str(url2)
+
 # 1 - Config wallet
 def configWallet():
     global walletMnemonic
@@ -147,6 +192,60 @@ def infoWallet():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR Wallet incorrect!'))
 
+# 11 - Info Token
+def infoToken():
+    inputidToken = input(colorsPython.escribirAmarillo('→ → Enter token Id: '))
+    if requests.get('https://api.ergoplatform.com/api/v0/assets/' + inputidToken + '/issuingBox').status_code == 200:
+        dataToken = requests.get('https://api.ergoplatform.com/api/v0/assets/' + inputidToken + '/issuingBox')
+        dataToken = dataToken.json()
+        nameToken = str(dataToken[0]['assets'][0]['name'])
+        amountToken = str(dataToken[0]['assets'][0]['amount'])
+        descriptionToken = toUtf8String(dataToken[0]['additionalRegisters']['R5'])[2:]
+        
+        # Detect NFT
+        try:
+            tokenNFT = dataToken[0]['additionalRegisters']['R7']
+        except:
+            tokenNFT = ''
+
+        # Detect NFT type
+        if tokenNFT == '0e020101':
+            try:
+                urlArchivo = resolveIpfs(toUtf8String(dataToken[0]['additionalRegisters']['R9'])[2:])
+            except:
+                urlArchivo = 'No URL available in R9'
+        elif tokenNFT == '0e020102':
+            url1ArchivoAudio = resolveIpfsAudio(toUtf8String(dataToken[0]['additionalRegisters']['R9'])[4:])
+            url2ArchivoAudio = resolveIpfsAudio2(toUtf8String(dataToken[0]['additionalRegisters']['R9'])[4:])
+        elif tokenNFT == '0e020103':
+            urlArchivo = resolveIpfs(toUtf8String(dataToken[0]['additionalRegisters']['R9'])[2:])
+        else:
+            urlArchivo = 'No NFT'
+            print('No NFT')
+        
+        # Muestro datos
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirVerde('Token Info ↓'))
+        print(colorsPython.escribirVerdeOpacidad('Id token: ' + inputidToken))
+        print(colorsPython.escribirVerdeOpacidad('Name: ' + nameToken))
+        print(colorsPython.escribirVerdeOpacidad('Description: ' + descriptionToken))
+        print(colorsPython.escribirVerdeOpacidad('Amount: ' + amountToken))
+        
+        if tokenNFT == '0e020102':
+            print(colorsPython.escribirVerdeOpacidad('URL-1: ' + url1ArchivoAudio))    
+            print(colorsPython.escribirVerdeOpacidad('URL-2: ' + url2ArchivoAudio))
+        else: 
+            print(colorsPython.escribirVerdeOpacidad('URL: ' + urlArchivo))
+
+
+    else:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirRojo('ERROR Id token incorrect!'))
+
 # Menu
 colorsPython.cargoCabecera()
 colorsPython.cargoMenu(0)
@@ -176,6 +275,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(10)
         infoWallet()
+    elif opcion == 11:
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(11)
+        infoToken()
     elif opcion == 12:
         print(' ')
         print('Bye!')

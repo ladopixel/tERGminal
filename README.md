@@ -30,7 +30,7 @@ pip install ergpy
   <li>⌛ 8 Create NFT.</li>
   <li>✅ 9 Info Ergo.</li>
   <li>✅ 10 Info Wallet.</li>
-  <li>⌛ 11 Info Token.</li>
+  <li>✅ 11 Info Token.</li>
   <li>✅ 12 Exit.</li>
 </ul>
 
