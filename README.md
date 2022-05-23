@@ -18,6 +18,23 @@ pip install JPype1
 pip install ergpy
 ~~~
 
+<h2>Progress</h2>
+<ul>
+  <li>✅ 1 Configure wallet.</li>
+  <li>✅ 2 Send ERG to a wallet.</li>
+  <li>✅ 3 Send ERG to a random wallet.</li>
+  <li>⌛ 4 Send NFT to wallet.</li>
+  <li>⌛ 5 Send NFT to a random wallet.</li>
+  <li>⌛ 6 Send NFT random to a wallet.</li>
+  <li>⌛ 7 Create token.</li>
+  <li>⌛ 8 Create NFT.</li>
+  <li>✅ 9 Info Ergo.</li>
+  <li>✅ 10 Info Wallet.</li>
+  <li>⌛ 11 Info Token.</li>
+  <li>✅ 12 Exit.</li>
+</ul>
+
+
 <h2>Modifications</h2>
 <p>The application is divided into 3 files:</p>
 <ul>
