@@ -18,7 +18,6 @@ def configWallet():
     colorsPython.cargoMenu(0)
     print(colorsPython.escribirVerde('wallet ok!'))
 
-
 # 2 - Send ERG
 def sendErg():
     inputSendErg = float(input(colorsPython.escribirAmarillo('→ → Enter amount to send: ')))
@@ -31,12 +30,13 @@ def sendErg():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
         print(helperMethods.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
+        print(colorsPython.escribirVerde('Send OK ↓'))
+        print(colorsPython.escribirVerdeOpacidad('Send ' + str(amount) + ' ERG to the wallet ' + str(inputSendErgWallet)))
     except:
         print(colorsPython.borraLaPantalla())
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR Transaction!'))
-
 
 # 3 - Send ERG random
 def sendErgRandom():
@@ -51,9 +51,34 @@ def sendErgRandom():
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirVerde('Wallet winner ↓'))
-        print(colorsPython.escribirVerdeOpacidad(receiverAddresses))
+        print(colorsPython.escribirVerdeOpacidad(ganador))
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
         print(helperMethods.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
+        print(colorsPython.escribirVerde('Send OK ↓'))
+        print(colorsPython.escribirVerdeOpacidad('Send ' + str(amount) + ' ERG to the wallet ' + str(ganador)))
+    except:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirRojo('ERROR Transaction!'))
+
+# 4 - Send NFT wallet
+def sendNftWallet():
+    print(colorsPython.escribirVerdeOpacidad('With your NFT the amount of 0.01 ERG + fee will be sent.'))
+    inputNftId = input(colorsPython.escribirAmarillo('→ → Enter NFT Id to send: '))
+    inputSendErgWallet = input(colorsPython.escribirAmarillo('→ → Enter wallet to send: '))
+    amount = [0.01]
+    receiverAddresses = [inputSendErgWallet]
+    tokenParaEnviar = [inputNftId]
+    tokens = [tokenParaEnviar]
+    try:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
+        print(helperMethods.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokens, walletMnemonic=walletMnemonic))
+        print('\033[2;32m' + colorsPython.escribirVerde('Send OK ↓'))
+        print(colorsPython.escribirVerdeOpacidad('Send NFT with ID ' + str(inputNftId) + ' to the wallet ' + str(inputSendErgWallet)))
     except:
         print(colorsPython.borraLaPantalla())
         colorsPython.cargoCabecera()
@@ -139,6 +164,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(3)
         sendErgRandom()
+    elif opcion == 4:
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(4)
+        sendNftWallet()
     elif opcion == 9:
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(9)
