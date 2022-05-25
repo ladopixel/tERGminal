@@ -347,57 +347,63 @@ def infoToken():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR Id token incorrect!'))
 
-# Menu
-colorsPython.cargoCabecera()
-colorsPython.cargoMenu(0)
 
 def elegirOpciones(opcion):
-    if opcion == 1:
+    if opcion == '1':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(1)
         configWallet()
-    elif opcion == 2:
+    elif opcion == '2':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(2)
         sendErg()
-    elif opcion == 3:
+    elif opcion == '3':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(3)
         sendErgRandom()
-    elif opcion == 4:
+    elif opcion == '4':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(4)
         sendNftWallet()
-    elif opcion == 5:
+    elif opcion == '5':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(5)
         sendNftRandomWallet()
-    elif opcion == 6:
+    elif opcion == '6':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(6)
         sendRandomNftWallet()
-    elif opcion == 7:
+    elif opcion == '7':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(7)
         createToken()
-    elif opcion == 9:
+    elif opcion == '9':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(9)
         infoErgo()
-    elif opcion == 10:
+    elif opcion == '10':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(10)
         infoWallet()
-    elif opcion == 11:
+    elif opcion == '11':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(11)
         infoToken()
-    elif opcion == 12:
+    elif opcion == '12':
         print(' ')
         print('Bye!')
         print(' ')
         exit()
+    else:
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirRojo('Sorry, that option is incorrect!'))
+        print(colorsPython.escribirVerdeOpacidad('Select option (1-12)'))
+        
 
+# Menu
+colorsPython.cargoCabecera()
+colorsPython.cargoMenu(0)
 while True:
-    opcionInput = int(input('\033[0;m' + colorsPython.escribirAmarillo('→ Enter option: ')))
+    opcionInput = input('\033[0;m' + colorsPython.escribirAmarillo('→ Enter option: '))
     elegirOpciones(opcionInput)
