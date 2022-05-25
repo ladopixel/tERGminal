@@ -203,6 +203,33 @@ def sendRandomNftWallet():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR Wallet incorrect!'))  
 
+# 7 - Create token
+def createToken():
+    print(colorsPython.escribirVerdeOpacidad('Creating the token the amount 0.001 ERG of fee will be sent.'))
+    inputName = input(colorsPython.escribirAmarillo('→ → Enter token name: '))
+    inputDescription = input(colorsPython.escribirAmarillo('→ → Enter token description: '))
+    inputAmount = int(input(colorsPython.escribirAmarillo('→ → Enter token amount: ')))
+    inputDecimals = int(input(colorsPython.escribirAmarillo('→ → Enter token decimals: ')))
+    validoCreacion = input(colorsPython.escribirAmarillo('You are about to create a token on the Ergo blockchain, review the data. Are they correct? (Y/n): '))
+    if validoCreacion == 'Y':
+        try:
+            print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
+            print(helperMethods.createToken(ergo=ergo, tokenName=inputName, description=inputDescription, tokenAmount=inputAmount, tokenDecimals=inputDecimals, walletMnemonic=walletMnemonic))
+            print('\033[2;32m' + colorsPython.escribirVerde('Token created correctly ↓'))
+            print(colorsPython.escribirVerdeOpacidad('Name: ') + colorsPython.escribirVerdeOpacidad(str(inputName)))
+            print(colorsPython.escribirVerdeOpacidad('Description: ') + colorsPython.escribirVerdeOpacidad(str(inputDescription)))
+            print(colorsPython.escribirVerdeOpacidad('Amount: ') + colorsPython.escribirVerdeOpacidad(str(inputAmount)))
+            print(colorsPython.escribirVerdeOpacidad('Decimals: ') + colorsPython.escribirVerdeOpacidad(str(inputDecimals)))
+        except:
+            print(colorsPython.borraLaPantalla())
+            colorsPython.cargoCabecera()
+            colorsPython.cargoMenu(0)
+            print(colorsPython.escribirRojo('ERROR creating token!'))
+    else:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(7)
+        createToken()
 
 # 9 - Info Ergo
 def infoErgo():
@@ -349,6 +376,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(6)
         sendRandomNftWallet()
+    elif opcion == 7:
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(7)
+        createToken()
     elif opcion == 9:
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(9)
