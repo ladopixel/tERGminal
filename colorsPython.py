@@ -157,6 +157,18 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('9') + escribirAmarilloOpacidad('   Info Ergo.                                │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
+    if wallet == 8:
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('3') + escribirAmarilloOpacidad('   Send ERG to a random wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('4') + escribirAmarilloOpacidad('   Send NFT to wallet.                       │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('5') + escribirAmarilloOpacidad('   Send NFT to a random wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('6') + escribirAmarilloOpacidad('   Send NFT random to a wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('7') + escribirAmarilloOpacidad('   Create token.                             │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('8') + escribirAmarillo('   Create NFT.                               ') + escribirAmarilloOpacidad('│'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('9') + escribirAmarilloOpacidad('   Info Ergo.                                │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
     if wallet == 9:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))

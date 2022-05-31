@@ -5,6 +5,7 @@ import colorsPython
 import whiteList
 import requests
 
+import hashlib
 ergo = appkit.ErgoAppKit(nodeURL = 'http://159.65.11.55:9053/')
 walletMnemonic = ''
 
@@ -231,6 +232,34 @@ def createToken():
         colorsPython.cargoMenu(7)
         createToken()
 
+# 8 - Create NFT
+def createNft():
+    print(colorsPython.escribirVerdeOpacidad('Creating the NFT the amount 0.001 ERG of fee will be sent.'))
+    inputNftName = input(colorsPython.escribirAmarillo('→ → Enter NFT name: '))
+    nftName = inputNftName
+    inputDescription = input(colorsPython.escribirAmarillo('→ → Enter NFT description: '))
+    description = inputDescription
+    inputImageLink = input(colorsPython.escribirAmarillo('→ → Enter NFT link (IPFS): '))
+    imageLink = inputImageLink
+    inputRutaLocalImagen = input(colorsPython.escribirAmarillo('→ → Enter Image local directory path: '))
+    imagen = inputRutaLocalImagen
+    with open(imagen, 'rb') as f:    
+            bytes = f.read()
+            hashLocalImage = hashlib.sha256(bytes).hexdigest()
+            imageHash = appkit.sha256caster(hashLocalImage)
+    try:
+        print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
+        print(helperMethods.createNFT(ergo=ergo, nftName=nftName, description=description, imageLink=imageLink, imageHash=imageHash, walletMnemonic=walletMnemonic))
+        print('\033[2;32m' + colorsPython.escribirVerde('NFT created correctly ↓'))
+        print(colorsPython.escribirVerdeOpacidad('Name: ') + colorsPython.escribirVerdeOpacidad(str(nftName)))
+        print(colorsPython.escribirVerdeOpacidad('Description: ') + colorsPython.escribirVerdeOpacidad(str(description)))
+        print(colorsPython.escribirVerdeOpacidad('SHA: ') + colorsPython.escribirVerdeOpacidad(str(hashLocalImage)))
+    except:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirRojo('ERROR create NFT!'))
+
 # 9 - Info Ergo
 def infoErgo():
     URLHeight = 'https://api.ergoplatform.com/api/v1/networkState'
@@ -377,6 +406,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(7)
         createToken()
+    elif opcion == '8':
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(8)
+        createNft()
     elif opcion == '9':
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(9)
