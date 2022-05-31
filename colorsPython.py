@@ -52,7 +52,7 @@ def cargoCabecera():
     print(escribirAmarilloOpacidad('│') + escribirCianOpacidad('        ▓▓') + escribirAmarilloOpacidad('                                        │'))
     print(escribirAmarilloOpacidad('│') + escribirCianOpacidad('      ▓▓') + escribirAmarilloOpacidad('                                          │'))
     print(escribirAmarilloOpacidad('│') + escribirCianOpacidad('    ▓▓') + escribirBlancoOpacidad('        Playing with python + blockchain') + escribirAmarilloOpacidad('    │'))
-    print(escribirAmarilloOpacidad('│') + escribirCianOpacidad('    ▓▓▓▓▓▓▓▓▓') + escribirBlanco(' ERGOPLATFORM.COM') + escribirAmarilloOpacidad('                    │'))
+    print(escribirAmarilloOpacidad('│') + escribirCianOpacidad('    ▓▓▓▓▓▓▓▓▓') + escribirBlanco(' ERGOPLATFORM.ORG') + escribirAmarilloOpacidad('                    │'))
     print(escribirAmarilloOpacidad('│                                                  │'))
     print(escribirAmarilloOpacidad('└──────────────────────────────────────────────────┘'))
 
