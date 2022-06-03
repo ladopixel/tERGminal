@@ -59,7 +59,7 @@ def resolveIpfsAudio2(urls):
 # 1 - Config wallet
 def configWallet():
     global wallet_mnemonic
-    inputSemilla = input(colorsPython.escribirAmarillo('→ → Enter seed pharse: '))
+    inputSemilla = input(colorsPython.escribirAmarillo('→ → Enter seed phrase: '))
     wallet_mnemonic = inputSemilla
     print(colorsPython.borraLaPantalla())
     colorsPython.cargoCabecera()

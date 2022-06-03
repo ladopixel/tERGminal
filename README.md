@@ -15,11 +15,14 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install git pip openjdk-8-jre -y
 ~~~
 
-> Note: we explicitly call Java 8 otherwise the Raspberry Pi Zero will return a "Server VM is only supported on ARMv7+ VFP" error. 
+<h4>Pi Zero</h4>
 
-<p>
-To correct this error in Pi Zero you must do the following: https://raspberrypi.stackexchange.com/questions/104203/unable-to-run-java-on-raspberry-pi-zero-vm-is-only-supported-on-armv7-vfp
-</p>
+We need to explicity call Java 8 otherwise you will receive a "Server VM is only supported on ARMv7+ VFP" error. To correct this run the following ([credit](https://raspberrypi.stackexchange.com/questions/104203/unable-to-run-java-on-raspberry-pi-zero-vm-is-only-supported-on-armv7-vfp)): 
+
+~~~
+sudo update-alternatives --config java
+# Then select Java 8's menu number
+~~~
 
 <h3>Install dependencies</h3>
 
@@ -27,7 +30,7 @@ To correct this error in Pi Zero you must do the following: https://raspberrypi.
 pip install JPype1 ergpy
 ~~~
 
-<h3>Clone tERGminal repo</h3>
+<h3>Clone repo</h3>
 
 ~~~
 git clone https://github.com/ladopixel/tERGminal.git
@@ -72,7 +75,5 @@ python ergpyMenu.py
 <p>Most of the options offered by this application are covered by the <a href='https://ergoplatform.org/en/get-erg/#Wallets'>official Ergo wallets.</a> The main idea that crossed my mind for the creation of tERGminal is to be able to carry a Swiss army knife of ERGO on a Raspberry Pi Zero when traveling. <br>tERGminal does not store any type of data, you can check it yourself by looking at its code before executing it.</p>
 <p>Remember that this is a <strong>non-audit application,</strong> although I want you to have no problems with your ERGs, I recommend that the seed phrase you enter (it will never be stored) corresponds to a wallet that is not your main wallet.</p>
 <p>For the options that display information (9, 10 and 11) there is no need to configure the wallet.</p>
-
-
 
 
