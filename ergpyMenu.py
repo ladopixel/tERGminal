@@ -1,12 +1,15 @@
 import random
 from platform import node
-from ergpy import helperMethods, appkit
+from ergpy import helper_functions, appkit
 import colorsPython
 import whiteList
 import requests
-
 import hashlib
-ergo = appkit.ErgoAppKit(nodeURL = 'http://159.65.11.55:9053/')
+
+node_url: str = "http://159.65.11.55:9053/" # MainNet or TestNet
+ergo = appkit.ErgoAppKit(node_url=node_url)
+
+
 walletMnemonic = ''
 
 # Varias funciones para datos
