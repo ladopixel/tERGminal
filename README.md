@@ -18,11 +18,7 @@ sudo apt install git pip openjdk-8-jre -y
 > Note: we explicitly call Java 8 otherwise the Raspberry Pi Zero will return a "Server VM is only supported on ARMv7+ VFP" error. 
 
 <p>
-To correct this error in Pi Zero you must do the following: 
-- sudo apt install openjdk-8-jdk
-- sudo update-alternatives --config java
-
-https://raspberrypi.stackexchange.com/questions/104203/unable-to-run-java-on-raspberry-pi-zero-vm-is-only-supported-on-armv7-vfp
+To correct this error in Pi Zero you must do the following: https://raspberrypi.stackexchange.com/questions/104203/unable-to-run-java-on-raspberry-pi-zero-vm-is-only-supported-on-armv7-vfp
 </p>
 
 <h3>Install dependencies</h3>
