@@ -5,17 +5,35 @@ Undoubtedly, the <a href="https://github.com/mgpai22/ergpy">ergpy repository</a>
 
 <img src='https://ergotokens.org/captura-tERGminal.png' alt='tERGminal screenshot'>
 
-<h2>Requirements</h2>
 
-~~~ 
-Java 8 or higher to be installed on system.
-https://www.oracle.com/java/technologies/java-se-glance.html
+<h2>Quick Start</h2>
+
+<h3>Prepare installation</h3>
+
 ~~~
+sudo apt update && sudo apt upgrade -y
+sudo apt install git pip openjdk-8-jre -y
 ~~~
-pip install JPype1
+
+> Note: we explicitly call Java 8 otherwise the Raspberry Pi Zero will return a "Server VM is only supported on ARMv7+ VFP" error.
+
+<h3>Install dependencies</h3>
+
 ~~~
+pip install JPype1 ergpy
 ~~~
-pip install ergpy
+
+<h3>Clone tERGminal repo</h3>
+
+~~~
+git clone https://github.com/ladopixel/tERGminal.git
+~~~
+
+<h3>Launch tERGminal</h3>
+
+~~~
+cd tERGminal
+python ergpyMenu.py
 ~~~
 
 <h2>Progress</h2>
@@ -50,3 +68,7 @@ pip install ergpy
 <p>Most of the options offered by this application are covered by the <a href='https://ergoplatform.org/en/get-erg/#Wallets'>official Ergo wallets.</a> The main idea that crossed my mind for the creation of tERGminal is to be able to carry a Swiss army knife of ERGO on a Raspberry Pi Zero when traveling. <br>tERGminal does not store any type of data, you can check it yourself by looking at its code before executing it.</p>
 <p>Remember that this is a <strong>non-audit application,</strong> although I want you to have no problems with your ERGs, I recommend that the seed phrase you enter (it will never be stored) corresponds to a wallet that is not your main wallet.</p>
 <p>For the options that display information (9, 10 and 11) there is no need to configure the wallet.</p>
+
+
+
+
