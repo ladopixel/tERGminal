@@ -9,7 +9,6 @@ import hashlib
 node_url: str = "http://159.65.11.55:9053/" # MainNet or TestNet
 ergo = appkit.ErgoAppKit(node_url=node_url)
 
-
 walletMnemonic = ''
 
 # Varias funciones para datos
@@ -78,7 +77,7 @@ def sendErg():
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-        print(helperMethods.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
+        print(helper_functions.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
         print(colorsPython.escribirVerde('Send OK ↓'))
         print(colorsPython.escribirVerdeOpacidad('Send ' + str(amount) + ' ERG to the wallet ' + str(inputSendErgWallet)))
     except:
@@ -102,7 +101,7 @@ def sendErgRandom():
         print(colorsPython.escribirVerde('Wallet winner ↓'))
         print(colorsPython.escribirVerdeOpacidad(ganador))
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-        print(helperMethods.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
+        print(helper_functions.simpleSend(ergo=ergo, amount=amount, walletMnemonic=walletMnemonic, receiverAddresses=receiverAddresses))
         print(colorsPython.escribirVerde('Send OK ↓'))
         print(colorsPython.escribirVerdeOpacidad('Send ' + str(amount) + ' ERG to the wallet ' + str(ganador)))
     except:
@@ -125,7 +124,7 @@ def sendNftWallet():
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-        print(helperMethods.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokens, walletMnemonic=walletMnemonic))
+        print(helper_functions.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokens, walletMnemonic=walletMnemonic))
         print('\033[2;32m' + colorsPython.escribirVerde('Send OK ↓'))
         print(colorsPython.escribirVerdeOpacidad('Send NFT with ID ' + str(inputNftId) + ' to the wallet ' + str(inputSendErgWallet)))
     except:
@@ -152,7 +151,7 @@ def sendNftRandomWallet():
         print(colorsPython.escribirVerde('Wallet winner ↓'))
         print(colorsPython.escribirVerdeOpacidad(ganador))
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-        print(helperMethods.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokens, walletMnemonic=walletMnemonic))
+        print(helper_functions.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokens, walletMnemonic=walletMnemonic))
         print('\033[2;32m' + colorsPython.escribirVerde('Send OK ↓'))
         print(colorsPython.escribirVerdeOpacidad('Send NFT with ID ' + str(inputNftId) + ' to the wallet ' + str(ganador)))
     except:
@@ -188,7 +187,7 @@ def sendRandomNftWallet():
         if requests.get('https://api.ergoplatform.com/api/v1/addresses/' + inputInfoWallet + '/balance/confirmed').status_code == 200:    
             try:
                 print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-                print(helperMethods.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokensParaEnviar, walletMnemonic=walletMnemonic))
+                print(helper_functions.sendToken(ergo=ergo, amount=amount, receiverAddresses=receiverAddresses, tokens=tokensParaEnviar, walletMnemonic=walletMnemonic))
                 print('\033[2;32m' + colorsPython.escribirVerde('Send OK ↓'))
                 print(colorsPython.escribirVerdeOpacidad('Send NFT with ID ' + str(tokens) + ' to the wallet ' + str(receiverAddresses)))
             except:
@@ -218,7 +217,7 @@ def createToken():
     if validoCreacion == 'Y':
         try:
             print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-            print(helperMethods.createToken(ergo=ergo, tokenName=inputName, description=inputDescription, tokenAmount=inputAmount, tokenDecimals=inputDecimals, walletMnemonic=walletMnemonic))
+            print(helper_functions.createToken(ergo=ergo, tokenName=inputName, description=inputDescription, tokenAmount=inputAmount, tokenDecimals=inputDecimals, walletMnemonic=walletMnemonic))
             print('\033[2;32m' + colorsPython.escribirVerde('Token created correctly ↓'))
             print(colorsPython.escribirVerdeOpacidad('Name: ') + colorsPython.escribirVerdeOpacidad(str(inputName)))
             print(colorsPython.escribirVerdeOpacidad('Description: ') + colorsPython.escribirVerdeOpacidad(str(inputDescription)))
@@ -252,7 +251,7 @@ def createNft():
             imageHash = appkit.sha256caster(hashLocalImage)
     try:
         print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
-        print(helperMethods.createNFT(ergo=ergo, nftName=nftName, description=description, imageLink=imageLink, imageHash=imageHash, walletMnemonic=walletMnemonic))
+        print(helper_functions.createNFT(ergo=ergo, nftName=nftName, description=description, imageLink=imageLink, imageHash=imageHash, walletMnemonic=walletMnemonic))
         print('\033[2;32m' + colorsPython.escribirVerde('NFT created correctly ↓'))
         print(colorsPython.escribirVerdeOpacidad('Name: ') + colorsPython.escribirVerdeOpacidad(str(nftName)))
         print(colorsPython.escribirVerdeOpacidad('Description: ') + colorsPython.escribirVerdeOpacidad(str(description)))
