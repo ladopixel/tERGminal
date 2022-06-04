@@ -209,7 +209,7 @@ def cargoMenu(wallet):
 
     
     
-    print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Exit.                                     │'))
+    print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('0') + escribirAmarilloOpacidad('  Exit.                                      │'))
     print(escribirAmarilloOpacidad('│                                                  │'))
     print(escribirAmarilloOpacidad('└──────────────────────────────────────────────────┘'))
     print(' ')

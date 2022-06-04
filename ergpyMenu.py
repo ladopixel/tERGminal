@@ -425,7 +425,7 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(11)
         infoToken()
-    elif opcion == '12':
+    elif opcion == '0':
         print(' ')
         print('Bye!')
         print(' ')
