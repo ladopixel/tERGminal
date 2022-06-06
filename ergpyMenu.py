@@ -5,6 +5,7 @@ import colorsPython
 import whiteList
 import requests
 import hashlib
+from datetime import datetime
 
 node_url: str = "http://159.65.11.55:9053/" 
 ergo = appkit.ErgoAppKit(node_url=node_url)
@@ -379,6 +380,62 @@ def infoToken():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR Id token incorrect!'))
 
+# 12 Info Transaction example: 3704f28826aff29296965951295fe3aa59eef6aa4442c6ca1fcbdbbe1fc7ecae
+def infoTransaction():
+    input_info_transaction = input(colorsPython.escribirAmarillo('→ → Enter transaction id: '))
+    if requests.get('https://api.ergoplatform.com/api/v1/transactions/' + input_info_transaction).status_code == 200:
+        dato_transaction = requests.get('https://api.ergoplatform.com/api/v1/transactions/' + input_info_transaction)
+        dato_transaction = dato_transaction.json()
+        try:
+            print(colorsPython.borraLaPantalla())
+            colorsPython.cargoCabecera()
+            colorsPython.cargoMenu(0)
+            print(colorsPython.escribirVerde('Info Transaction ↓'))
+            print(colorsPython.escribirNegro('Transaction id: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['id'])))
+            print(colorsPython.escribirNegro('Block id: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['blockId'])))
+            print(colorsPython.escribirNegro('Inclusion Height: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['inclusionHeight'])))
+            print(colorsPython.escribirNegro('Confirmations: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['numConfirmations'])))
+            print(colorsPython.escribirNegro('Index: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['index'])))
+            print(colorsPython.escribirNegro('Global index: ') + colorsPython.escribirVerdeOpacidad(str(dato_transaction['globalIndex'])))
+            # Divide by 1000 to go from js ts to python ts
+            ts = dato_transaction['timestamp']/1000
+            dt = datetime.fromtimestamp(ts)
+            print(colorsPython.escribirNegro('Received Time: ') + colorsPython.escribirVerdeOpacidad(str(dt)))
+
+            size_kB = dato_transaction['size']/1024
+            size_kB_round = round(size_kB, 2)
+            print(colorsPython.escribirNegro('Size: ') + colorsPython.escribirVerdeOpacidad(str(size_kB_round) + ' kB'))
+            
+            print(' ')
+            print(colorsPython.escribirVerde('Inputs ↓'))
+            dato_inputs = dato_transaction['inputs']
+            for item_input in dato_inputs:
+                print(colorsPython.escribirAmarillo('→ ' + colorsPython.escribirVerdeOpacidad(str(item_input))))
+            
+            print(' ')
+            print(colorsPython.escribirVerde('Data Inputs ↓'))
+            item_data_input = dato_transaction['dataInputs']
+            for item_data_input in item_data_input:
+                print(colorsPython.escribirAmarillo('→ ' + colorsPython.escribirVerdeOpacidad(str(item_data_input))))
+                print(' ')
+            
+            print(' ')
+            print(colorsPython.escribirVerde('Outputs ↓'))
+            dato_output = dato_transaction['outputs']
+            for item_output in dato_output:
+                print(colorsPython.escribirAmarillo('→ ' + colorsPython.escribirVerdeOpacidad(str(item_output))))
+                print(' ')
+
+        except:
+            print(colorsPython.borraLaPantalla())
+            colorsPython.cargoCabecera()
+            colorsPython.cargoMenu(0)
+            print(colorsPython.escribirRojo('ERROR info transaction!'))
+    else:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+        print(colorsPython.escribirRojo('ERROR transaction id incorrect!'))
 
 def elegirOpciones(opcion):
     if opcion == '1':
@@ -425,6 +482,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(11)
         infoToken()
+    elif opcion == '12':
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(12)
+        infoTransaction()
     elif opcion == '0':
         print(' ')
         print('Bye!')
@@ -434,7 +495,7 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('Sorry, that option is incorrect!'))
-        print(colorsPython.escribirVerdeOpacidad('Select option (1-12)'))
+        print(colorsPython.escribirVerdeOpacidad('Select option (0-12)'))
         
 
 # Menu
