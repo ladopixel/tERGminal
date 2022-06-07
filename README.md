@@ -57,7 +57,7 @@ python ergpyMenu.py
   <li>✅ 10 Info Wallet.</li>
   <li>✅ 11 Info Token.</li>
   <li>✅ 12 Info transaction.</li>
-  <li>⏳︎ 13 Send tokens to multiple addresses.</li>
+  <li>✅ 13 Send tokens to multiple addresses.</li>
   <li>⏳︎ 14 Send multiple tokens to one address.</li>
   <li>⏳︎ 15 Burn tokens.</li>
   <li>✅ 0 Exit.</li>

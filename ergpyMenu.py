@@ -437,6 +437,43 @@ def infoTransaction():
         colorsPython.cargoMenu(0)
         print(colorsPython.escribirRojo('ERROR transaction id incorrect!'))
 
+# 13  Send tokens to multiple addresses.
+def sendTokensMultipleAddress():
+    print(colorsPython.escribirVerdeOpacidad('To each address the amount of 0.002 ERG will be added in the sending of the token.'))
+    input_nft_id = input(colorsPython.escribirAmarillo('→ → Enter Token Id to send: '))
+    receiver_addresses = whiteList.getWhiteList()
+    token_para_enviar = []
+    amount = []
+    
+    # To generate ID and amounts for each Wallet
+    for i in receiver_addresses:
+        token_para_enviar.append([input_nft_id])
+        amount.append(0.002)
+    
+    tokens = token_para_enviar
+
+    total_pagar = 0.002 * len(receiver_addresses)
+    price_ok = input(colorsPython.escribirAmarillo('Sending the token to ' + str(len(receiver_addresses)) + ' addresses costs you ' + str(total_pagar) + ' ERG. Are you sure? (Y/n): '))
+    if price_ok == 'Y':
+        try:
+            print(colorsPython.borraLaPantalla())
+            colorsPython.cargoCabecera()
+            colorsPython.cargoMenu(0)
+            print(colorsPython.escribirVerde('Transaction ↓') + '\033[2;32m')
+            print(helper_functions.send_token(ergo=ergo, amount=amount, receiver_addresses=receiver_addresses, tokens=tokens, wallet_mnemonic=wallet_mnemonic))
+            print('\033[2;32m' + colorsPython.escribirVerde('Send OK ↓'))
+            print(colorsPython.escribirVerdeOpacidad('Send NFT with ID ' + str(tokens) + ' to the wallets:'))
+            print(colorsPython.escribirVerdeOpacidad(str(receiver_addresses)))
+        except:
+            print(colorsPython.borraLaPantalla())
+            colorsPython.cargoCabecera()
+            colorsPython.cargoMenu(0)
+            print(colorsPython.escribirRojo('ERROR Transaction!'))
+    else:
+        print(colorsPython.borraLaPantalla())
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(0)
+
 def elegirOpciones(opcion):
     if opcion == '1':
         colorsPython.cargoCabecera()
@@ -486,6 +523,10 @@ def elegirOpciones(opcion):
         colorsPython.cargoCabecera()
         colorsPython.cargoMenu(12)
         infoTransaction()
+    elif opcion == '13':
+        colorsPython.cargoCabecera()
+        colorsPython.cargoMenu(13)
+        sendTokensMultipleAddress()
     elif opcion == '0':
         print(' ')
         print('Bye!')

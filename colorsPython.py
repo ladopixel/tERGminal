@@ -74,6 +74,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 1:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarillo('   Configure wallet.                         ') + escribirAmarilloOpacidad('│'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -87,6 +88,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 2:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarillo('   Send ERG to a wallet.                     ') + escribirAmarilloOpacidad('│'))
@@ -100,6 +102,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 3:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -113,6 +116,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 4:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -126,6 +130,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 5:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -139,6 +144,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 6:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -152,6 +158,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 7:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -165,6 +172,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 8:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -178,6 +186,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 9:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -191,6 +200,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 10:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -204,6 +214,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarillo('  Info Wallet.                              ') + escribirAmarilloOpacidad('│'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 11:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -217,6 +228,7 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarillo('  Info Token.                               ') + escribirAmarilloOpacidad('│'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
     if wallet == 12:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
@@ -230,6 +242,21 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarillo('  Info Transaction.                         ') + escribirAmarilloOpacidad('│'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
+    if wallet == 13:
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('1') + escribirAmarilloOpacidad('   Configure wallet.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('2') + escribirAmarilloOpacidad('   Send ERG to a wallet.                     │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('3') + escribirAmarilloOpacidad('   Send ERG to a random wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('4') + escribirAmarilloOpacidad('   Send NFT to wallet.                       │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('5') + escribirAmarilloOpacidad('   Send NFT to a random wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('6') + escribirAmarilloOpacidad('   Send NFT random to a wallet.              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('7') + escribirAmarilloOpacidad('   Create token.                             │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('8') + escribirAmarilloOpacidad('   Create NFT.                               │'))   
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('9') + escribirAmarilloOpacidad('   Info Ergo.                                │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('10') + escribirAmarilloOpacidad('  Info Wallet.                              │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('11') + escribirAmarilloOpacidad('  Info Token.                               │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('12') + escribirAmarilloOpacidad('  Info Transaction.                         │'))
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarillo('  Send tokens to multiple addresses.        ') + escribirAmarilloOpacidad('│'))
     
 
     
