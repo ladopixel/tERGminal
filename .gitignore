@@ -3,3 +3,4 @@ __pycache__/
 captura-tERGminal.png
 *.log
 img/
+.env
