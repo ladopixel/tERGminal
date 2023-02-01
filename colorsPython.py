@@ -113,6 +113,10 @@ def cargoMenu(wallet):
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarillo('  Send tokens to multiple addresses.        ') + escribirAmarilloOpacidad('│'))
     else:
         print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('13') + escribirAmarilloOpacidad('  Send tokens to multiple addresses.        │'))
+    if wallet == 14:
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('14') + escribirAmarillo('  Send multiple tokens to addresses.        ') + escribirAmarilloOpacidad('│'))
+    else:
+        print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('14') + escribirAmarilloOpacidad('  Send multiple tokens to addresses.        │'))
     
     print(escribirAmarilloOpacidad('│    ') + escribirAmarillo('0') + escribirAmarilloOpacidad('  Exit.                                      │'))
     print(escribirAmarilloOpacidad('│                                                  │'))
