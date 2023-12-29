@@ -58,8 +58,8 @@ python ergpyMenu.py
   <li>✅ 11 Info Token.</li>
   <li>✅ 12 Info transaction.</li>
   <li>✅ 13 Send tokens to multiple addresses (It use the array with addresses that appear in the whiteList.py file).</li>
-  <li>⏳︎ 14 Send multiple tokens to one address.</li>
-  <li>⏳︎ 15 Burn tokens.</li>
+  <li>✅ 14 Send multiple tokens to one address.</li>
+  <li>✅ 15 Burn tokens.</li>
   <li>✅ 0 Exit.</li>
 </ul>
 
